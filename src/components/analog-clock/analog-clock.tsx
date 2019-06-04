@@ -7,7 +7,7 @@ export class AnalogClock {
   render() {
     return (
       <div>
-        <clock-display/>
+        <clock-display hours={8} minutes={21} seconds={29}/>
       </div>
     );
   }

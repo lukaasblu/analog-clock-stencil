@@ -10,7 +10,11 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 
 export namespace Components {
   interface AnalogClock {}
-  interface ClockDisplay {}
+  interface ClockDisplay {
+    'hours': number;
+    'minutes': number;
+    'seconds': number;
+  }
   interface MyComponent {
     /**
     * The first name
@@ -56,7 +60,11 @@ declare global {
 
 declare namespace LocalJSX {
   interface AnalogClock extends JSXBase.HTMLAttributes<HTMLAnalogClockElement> {}
-  interface ClockDisplay extends JSXBase.HTMLAttributes<HTMLClockDisplayElement> {}
+  interface ClockDisplay extends JSXBase.HTMLAttributes<HTMLClockDisplayElement> {
+    'hours'?: number;
+    'minutes'?: number;
+    'seconds'?: number;
+  }
   interface MyComponent extends JSXBase.HTMLAttributes<HTMLMyComponentElement> {
     /**
     * The first name
