@@ -1,0 +1,17 @@
+import { Component } from '@stencil/core';
+
+@Component({
+  tag: 'clock-display'
+})
+export class ClockDisplay {
+  render() {
+    return (
+      <svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="100" cy="100" r="95" stroke-width="10px" stroke="black" fill="transparent"/>
+        <line id="hour-hand" x1="100" y1="100" x2="100" y2="60" stroke="black" stroke-width="10" stroke-linecap="round"/>
+        <line id="minute-hand" x1="100" y1="100" x2="100" y2="30" stroke="black" stroke-width="8" stroke-linecap="round"/>
+        <line id="second-hand" x1="100" y1="100" x2="100" y2="30" stroke="black" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    );
+  }
+}
