@@ -9,6 +9,7 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 
 
 export namespace Components {
+  interface AnalogClock {}
   interface ClockDisplay {}
   interface MyComponent {
     /**
@@ -29,6 +30,12 @@ export namespace Components {
 declare global {
 
 
+  interface HTMLAnalogClockElement extends Components.AnalogClock, HTMLStencilElement {}
+  var HTMLAnalogClockElement: {
+    prototype: HTMLAnalogClockElement;
+    new (): HTMLAnalogClockElement;
+  };
+
   interface HTMLClockDisplayElement extends Components.ClockDisplay, HTMLStencilElement {}
   var HTMLClockDisplayElement: {
     prototype: HTMLClockDisplayElement;
@@ -41,12 +48,14 @@ declare global {
     new (): HTMLMyComponentElement;
   };
   interface HTMLElementTagNameMap {
+    'analog-clock': HTMLAnalogClockElement;
     'clock-display': HTMLClockDisplayElement;
     'my-component': HTMLMyComponentElement;
   }
 }
 
 declare namespace LocalJSX {
+  interface AnalogClock extends JSXBase.HTMLAttributes<HTMLAnalogClockElement> {}
   interface ClockDisplay extends JSXBase.HTMLAttributes<HTMLClockDisplayElement> {}
   interface MyComponent extends JSXBase.HTMLAttributes<HTMLMyComponentElement> {
     /**
@@ -64,6 +73,7 @@ declare namespace LocalJSX {
   }
 
   interface IntrinsicElements {
+    'analog-clock': AnalogClock;
     'clock-display': ClockDisplay;
     'my-component': MyComponent;
   }
